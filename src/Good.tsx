@@ -4,11 +4,11 @@ import cn from 'classnames';
 interface Props {
   isGoodSelected: boolean,
   good: string,
-  goodToggleSelect: (item: string, isSelected: boolean) => void;
+  handleToggleGood: (item: string, isSelected: boolean) => void;
 }
 
 export const Good: FC<Props> = (props) => {
-  const { isGoodSelected, good, goodToggleSelect } = props;
+  const { isGoodSelected, good, handleToggleGood } = props;
 
   return (
     <tr
@@ -25,7 +25,7 @@ export const Good: FC<Props> = (props) => {
           type="button"
           className={cn('button', { 'is-info': isGoodSelected })}
           onClick={() => (
-            goodToggleSelect(good, isGoodSelected)
+            handleToggleGood(good, isGoodSelected)
           )}
         >
           {isGoodSelected ? '-' : '+'}

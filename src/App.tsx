@@ -33,7 +33,7 @@ export class App extends Component<{}, State> {
     this.setState({ selectedGood: good });
   };
 
-  goodToggleSelect = (item: string, isSelected: boolean) => {
+  handleToggleGood = (item: string, isSelected: boolean) => {
     if (isSelected) {
       this.handleRemove();
     } else {
@@ -61,7 +61,7 @@ export class App extends Component<{}, State> {
         <GoodList
           goods={goods}
           selectedGood={selectedGood}
-          goodToggleSelect={this.goodToggleSelect}
+          handleToggleGood={this.handleToggleGood}
         />
       </main>
     );

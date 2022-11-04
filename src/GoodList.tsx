@@ -4,11 +4,11 @@ import { Good } from './Good';
 interface Props {
   goods: string[],
   selectedGood: string,
-  goodToggleSelect: (item: string, isSelected: boolean) => void;
+  handleToggleGood: (item: string, isSelected: boolean) => void;
 }
 
 export const GoodList: FC<Props> = (props) => {
-  const { goods, selectedGood, goodToggleSelect } = props;
+  const { goods, selectedGood, handleToggleGood } = props;
 
   return (
     <table className="table">
@@ -20,7 +20,7 @@ export const GoodList: FC<Props> = (props) => {
             <Good
               isGoodSelected={isGoodSelected}
               good={good}
-              goodToggleSelect={goodToggleSelect}
+              handleToggleGood={handleToggleGood}
             />
           );
         })}
